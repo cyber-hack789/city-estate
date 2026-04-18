@@ -3,15 +3,18 @@
 // ============================================
 // Uses built-in JWT — no jsonwebtoken package needed.
 // Credentials provider for email/password login.
+//
+// IMPORTANT: When using Credentials provider with JWT strategy,
+// do NOT use a database adapter. The adapter conflicts with
+// Credentials — NextAuth docs explicitly state this.
 
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "@/lib/mongodb";
 import { authService } from "@/services/auth.service";
 
 export const authOptions: NextAuthOptions = {
-  adapter: MongoDBAdapter(clientPromise),
+  // NO adapter — Credentials + JWT doesn't need one.
+  // Our User model handles persistence directly.
 
   providers: [
     CredentialsProvider({

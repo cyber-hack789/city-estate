@@ -16,7 +16,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard/buyer";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,10 @@ export default function LoginPage() {
 
     try {
       await login(email, password);
+      // Small delay to let session propagate before redirect
+      await new Promise((r) => setTimeout(r, 300));
       router.push(callbackUrl);
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Invalid credentials");
     } finally {

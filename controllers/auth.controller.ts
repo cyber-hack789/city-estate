@@ -59,6 +59,11 @@ export class AuthController {
 
       logger.error(message, "AuthController.register", error);
       logger.request("POST", "/api/v1/auth/register", 500);
+
+      // Surface connection errors in development
+      if (process.env.NODE_ENV === "development") {
+        return errorResponse(message, 500);
+      }
       return errorResponse("Internal server error", 500);
     }
   }

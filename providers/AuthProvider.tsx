@@ -11,5 +11,16 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
-  return <SessionProvider>{children}</SessionProvider>;
+  return (
+    <SessionProvider
+      // Ensure session fetching uses the correct path
+      basePath="/api/auth"
+      // Refetch session every 5 minutes to keep it fresh
+      refetchInterval={5 * 60}
+      // Refetch when window gains focus
+      refetchOnWindowFocus={true}
+    >
+      {children}
+    </SessionProvider>
+  );
 }

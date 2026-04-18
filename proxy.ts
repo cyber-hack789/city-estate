@@ -38,6 +38,7 @@ export async function proxy(request: NextRequest) {
 
   // Skip public API routes that don't need auth
   if (
+    pathname.startsWith("/api/auth") ||
     pathname.startsWith("/api/v1/auth") ||
     pathname === "/api/v1/properties" ||
     (pathname.startsWith("/api/v1/properties/") && request.method === "GET")
