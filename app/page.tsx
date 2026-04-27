@@ -25,7 +25,7 @@ const propertyTypes = [
   { icon: "🏡", label: "Villas", type: "villa" },
   { icon: "📐", label: "Plots", type: "plot" },
   { icon: "🏬", label: "Commercial", type: "commercial" },
-  { icon: "🛏️", label: "PG / Hostel", type: "pg" },
+  { icon: "🛏️", label: "PG / Co-living", type: "pg" },
 ];
 
 export default function HomePage() {
@@ -34,12 +34,16 @@ export default function HomePage() {
       <Header />
       <main>
         {/* ===== HERO SECTION ===== */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
-          {/* Abstract BG Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 -left-4 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-            <div className="absolute top-0 -right-4 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-500" />
+        <section className="relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="/hero-bg.png"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/60 to-slate-900/80" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
@@ -47,7 +51,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 <span className="text-emerald-300 text-sm font-medium">
-                  Trusted by 10,000+ homebuyers across India
+                  Discover Properties That Match Your Lifestyle
                 </span>
               </div>
 
