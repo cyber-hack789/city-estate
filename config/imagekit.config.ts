@@ -2,6 +2,7 @@
 // ImageKit Configuration
 // ============================================
 
+// @ts-ignore
 import ImageKit from "imagekit";
 
 if (
