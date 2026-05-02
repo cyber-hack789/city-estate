@@ -8,11 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/functions": "^3.4.4",
     "bcryptjs": "^3.0.3",
-    "imagekit": "^6.0.0",
+    "imagekit": "^1.5.0",
     "mongoose": "^7.6.0",
-    "next": "16.2.4",
-    "next-auth": "^4.24.14",
+    "next": "^9.3.3",
+    "next-auth": "^3.29.10",
     "nodemailer": "^8.0.5",
     "razorpay": "^2.9.6",
     "react": "19.2.4",
