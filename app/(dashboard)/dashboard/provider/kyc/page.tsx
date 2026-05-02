@@ -5,7 +5,7 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 
 export default function ProviderKycPage() {
-  const kycStatus = "pending";
+  const kycStatus: any = "pending";
 
   return (
     <DashboardShell role="provider">
